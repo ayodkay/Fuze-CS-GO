@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/matchFragment">
+
+    <fragment
+        android:id="@+id/matchFragment"
+        android:name="com.example.fuze.ui.match.MatchFragment"
+        android:label="@string/first_fragment_label"
+        tools:layout="@layout/fragment_match">
+
+        <action
+            android:id="@+id/action_MatchFragment_to_MatchDetails"
+            app:destination="@id/matchDetailsFragment"
+            app:popUpTo="@id/matchFragment"
+            app:popUpToSaveState="true"
+            app:restoreState="true">
+
+            <argument
+                android:name="matchResponse"
+                app:argType="com.example.fuze.models.MatchResponse" />
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/matchDetailsFragment"
+        android:name="com.example.fuze.ui.details.MatchDetailsFragment"
+        android:label="@string/second_fragment_label"
+        tools:layout="@layout/fragment_match_details">
+
+        <argument
+            android:name="matchResponse"
+            app:argType="com.example.fuze.models.MatchResponse" />
+
+        <action
+            android:id="@+id/action_MatchDetails_to_MatchFragment"
+            app:destination="@id/matchFragment" />
+    </fragment>
+</navigation>
