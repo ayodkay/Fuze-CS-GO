@@ -1,4 +1,4 @@
-Implemented with RxRelay, Koin, Picasso, Retrofit and MVVM.
+Implemented with RxRelay, Koin, Glide, Retrofit and MVVM.
 
 Connect to an emulator or physical device and click the Run button
 
