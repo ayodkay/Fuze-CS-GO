@@ -45,7 +45,7 @@ data class MatchResponse(
     }
 
     fun hasOpponent2() = try {
-        opponents?.get(0)
+        opponents?.get(1)
         true
     } catch (e: Exception) {
         false

@@ -36,7 +36,7 @@ class PandaScoreServiceModule {
         }
     }
 
-    fun matchesModule(): Module {
+    fun pandaScoreModule(): Module {
         return module {
             single<PandaScoreService> {
                 Retrofit.Builder()

@@ -20,7 +20,7 @@ class FuzeApplication : Application() {
             // Reference Android context
             androidContext(this@FuzeApplication)
             // Load modules
-            modules(appModule, PandaScoreServiceModule().matchesModule())
+            modules(appModule, PandaScoreServiceModule().pandaScoreModule())
         }
     }
 }
