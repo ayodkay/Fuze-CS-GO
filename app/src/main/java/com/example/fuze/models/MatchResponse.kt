@@ -37,21 +37,11 @@ data class MatchResponse(
     val winner_id: Int?,
     val winner_type: String?,
 ) : Serializable {
-    fun hasOpponent1() = try {
-        opponents?.get(0)
-        true
-    } catch (e: Exception) {
-        false
-    }
+    fun hasOpponent1() = (opponents?.size ?: 0) >= 1
 
-    fun hasOpponent2() = try {
-        opponents?.get(1)
-        true
-    } catch (e: Exception) {
-        false
-    }
+    fun hasOpponent2() = (opponents?.size ?: 0) >= 2
 
-    fun getOpponent1() = if (hasOpponent1()) opponents?.get(0) else null
+    fun getOpponent1() = opponents?.getOrNull(0)
 
-    fun getOpponent2() = if (hasOpponent2()) opponents?.get(1) else null
+    fun getOpponent2() = opponents?.getOrNull(1)
 }
